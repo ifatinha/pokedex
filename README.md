@@ -1,2 +1,2 @@
 # pokedex
-Pokedex Project
+Projeto desenvolvido durante a Formação JavaScript Developer da DIO

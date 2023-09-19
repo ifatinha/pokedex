@@ -1,0 +1,8 @@
+/*** reset CSS ***/
+@import "global/minireset.min.css";
+
+/*** global css ***/
+@import "global/global.css";
+
+/*** pokedex css ***/
+@import "layout/pokedex.css";

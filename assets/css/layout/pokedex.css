@@ -1,36 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
-
-body {
-    font-family: 'Roboto', sans-serif;
-}
-
-.container {
-    margin   : 0 auto;
-    max-width: 1200px;
-    padding  : 1.125rem 4%;
-    width    : 100%;
-}
-
-.section-title {
-    font-weight  : bolder;
-    margin-bottom: 0.75rem;
-}
-
 .pokemons {
     display              : grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap                  : .5rem;
+}
+
+@media screen and (min-width: 330px) {
+    .pokemons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .pokemons {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (min-width: 998px) {
     .pokemons {
         grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 998px) {
-    .pokemons {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 

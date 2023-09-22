@@ -2,6 +2,7 @@
     display              : grid;
     grid-template-columns: 1fr;
     gap                  : .5rem;
+    margin-bottom        : 2rem;
 }
 
 @media screen and (min-width: 330px) {
@@ -87,7 +88,7 @@
 
 .pokemon-type {
     border-radius: .75rem;
-    color        : #000;
+    color        : #fff;
     font-size    : 0.8rem;
     filter       : brightness(1.1);
     padding      : .2rem .6rem;

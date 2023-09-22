@@ -34,3 +34,28 @@ body {
     font-size    : 1.875rem;
     margin-bottom: 0.75rem;
 }
+
+.pagination {
+    text-align: center;
+    width     : 100%;
+}
+
+.pagination button {
+    background-color           : #6600ff;
+    border                     : none;
+    border-radius              : 0.25rem;
+    color                      : #fff;
+    cursor                     : pointer;
+    display                    : inline-block;
+    font-size                  : 1rem;
+    padding                    : 1rem 2rem;
+    text-align                 : center;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration        : 0.4s;
+}
+
+.pagination button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    opacity   : .9;
+}

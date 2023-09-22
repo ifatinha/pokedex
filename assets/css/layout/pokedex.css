@@ -61,18 +61,26 @@
     align-items    : center;
     display        : flex;
     height         : 80px;
+    flex-basis     : auto;
     justify-content: space-between;
     width          : 100%;
 }
 
-.pokemon-detail img {
-    height    : 100%;
-    object-fit: cover;
-}
-
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 998px) {
     .pokemon-detail {
         height: 150px;
+    }
+}
+
+.pokemon-detail img {
+    height    : 100%;
+    object-fit: contain;
+}
+
+@media screen and (min-width: 998px) {
+    .pokemon-detail img {
+        height: 125px;
+        width : 125px;
     }
 }
 

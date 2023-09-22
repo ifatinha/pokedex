@@ -12,5 +12,18 @@ pokeApi.getPokemons = (offset = 0, limit = 10) => {
 }
 
 pokeApi.getPokemonDetail = (pokemon) => {
-    return fetch(pokemon.url).then(response => response.json());
+    return fetch(pokemon.url)
+        .then(response => response.json())
+        .then(convertPokemonApiDetailToPokemon);
+}
+
+function convertPokemonApiDetailToPokemon(pokeDetail) {
+    const pokemon = new Pokemon();
+    pokemon.name = pokeDetail.name;
+    pokemon.order = pokeDetail.order;
+    pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
+    pokemon.types = pokeDetail.types.map((typeSlod) => { return typeSlod.type.name });
+    pokemon.mainType = pokemon.types[0];
+
+    return pokemon;
 }

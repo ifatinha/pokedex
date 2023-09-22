@@ -75,6 +75,10 @@
     background-color: var(--ghost);
 }
 
+.dragon {
+    background-color: var(--dragon);
+}
+
 .bug {
     background-color: var(--bug);
 }

@@ -1,5 +1,7 @@
 const pokemonsOl = document.querySelector('#pokemonsOl');
 const loadButton = document.querySelector('#loadMore');
+
+const maxRegister = 100000;
 const limit = 5;
 let offset = 0;
 
@@ -27,5 +29,14 @@ loadMorePokemo(offset, limit);
 
 loadButton.addEventListener('click', () => {
     offset += limit;
-    loadMorePokemo(offset, limit);
+    const qtdPokemons = offset + limit;
+
+    if (qtdPokemons >= maxRegister) {
+        const newLimit = maxRegister - offset;
+        loadMorePokemo(offset, newLimit);
+        loadButton.parentElement.removeChild(loadButton);
+        return
+    } else {
+        loadMorePokemo(offset, limit);
+    }
 });

@@ -20,7 +20,7 @@ pokeApi.getPokemonDetail = (pokemon) => {
 function convertPokemonApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon();
     pokemon.name = pokeDetail.name;
-    pokemon.order = pokeDetail.order;
+    pokemon.order = pokeDetail.id;
     pokemon.image = pokeDetail.sprites.other.dream_world.front_default;
     pokemon.types = pokeDetail.types.map((typeSlod) => { return typeSlod.type.name });
     pokemon.mainType = pokemon.types[0];

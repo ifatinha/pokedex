@@ -1,6 +1,9 @@
 /*** reset CSS ***/
 @import "global/minireset.min.css";
 
+/*** colors ***/
+@import "util/colors.css";
+
 /*** global css ***/
 @import "global/global.css";
 

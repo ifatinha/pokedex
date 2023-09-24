@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pokemon</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+    </style>
+</head>
+
+<body>
+    <button id="btnModal">Open Modal</button>
+
+    <div class="modal-container" id="modalPokemon">
+        <section class="modal-pokemon">
+            <div class="m-pokemon-imagem">
+                <a href="#" aria-label="Button Close" class="btn-close" id="btn-close-mobile">
+                    <i class="fa-solid fa-xmark"></i></a>
+                <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png" alt="Bulbasaur">
+            </div>
+            <div class="m-pokemon-info">
+                <div class="m-pokemon-header" style="background-color: #F7D02C;">
+                    <div class="m-pokemon-top">
+                        <div class="m-pokemon-number">
+                            <img src="assets/images/pokebola.png" alt="Pokebola">
+                            <span>0025</span>
+                        </div>
+                        <a href="#" aria-label="Button Close" class="btn-close" id="btn-close-desktop">
+                            <i class="fa-solid fa-xmark"></i></a>
+                    </div>
+                    <h1 class="m-pokemon-name">Pikachu</h1>
+                    <p class="m-pokemon-type">Eletric Pokémon</p>
+                </div>
+                <ul class="m-pokemon-detail">
+                    <li>
+                        <p>Species</p>
+                        <span>Seed</span>
+                    </li>
+                    <li>
+                        <p>Height</p>
+                        <span>0.4m</span>
+                    </li>
+                    <li>
+                        <p>Weight</p>
+                        <span>6.0kg</span>
+                    </li>
+                </ul>
+                <div class="m-desc-container">
+
+                    <ul class="m-pokemon-types">
+                        <li class="pokemon-type"><span>Eletric</span></li>
+                        <li class="pokemon-type"><span>Ground</span></li>
+                    </ul>
+
+                    <p class="m-pokemon-desc">
+                        When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.
+                    </p>
+
+                    <div class="btn-save">
+                        <button class="btn-default">Save</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://kit.fontawesome.com/09fa9cee0a.js" crossorigin="anonymous"></script>
+    <script src="assets/js/modal.js"></script>
+</body>
+
+</html>

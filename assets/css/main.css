@@ -1,6 +1,9 @@
 /*** reset CSS ***/
 @import "global/minireset.min.css";
 
+/*** animated ***/
+@import "util/animated.css";
+
 /*** colors ***/
 @import "util/colors.css";
 
@@ -9,3 +12,6 @@
 
 /*** pokedex css ***/
 @import "layout/pokedex.css";
+
+/*** pokemon modal ***/
+@import "layout/modal.css";

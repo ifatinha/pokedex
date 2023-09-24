@@ -1,4 +1,3 @@
-
 const pokeApi = {}
 
 pokeApi.getPokemons = (offset = 0, limit = 5) => {
@@ -27,3 +26,43 @@ function convertPokemonApiDetailToPokemon(pokeDetail) {
 
     return pokemon;
 }
+
+pokeApi.getPokemonId = (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    return fetch(url)
+        .then((response) => { return response.json() })
+        .then((pokemon) => { return createPokemonObject(pokemon) })
+}
+
+function createPokemonObject(pokemon) {
+    const fullPokemon = new FullPokemon();
+    fullPokemon.name = pokemon.name;
+    fullPokemon.id = pokemon.id;
+    fullPokemon.height = pokemon.height;
+    fullPokemon.weight = pokemon.weight;
+    fullPokemon.experience = pokemon.base_experience;
+    fullPokemon.abilities = pokemon.abilities.map((abilityName) => { return abilityName.ability.name });
+    fullPokemon.types = pokemon.types.map((typeSlod) => { return typeSlod.type.name });
+    fullPokemon.mainType = pokemon.types[0];
+    fullPokemon.order = pokemon.order;
+    // fullPokemon.group = getDetailsPokemon('egg-group', pokemon.id);
+    return fullPokemon;
+}
+
+function getDetailsPokemon(path, id) {
+    const url = `https://pokeapi.co/api/v2/${path}/${id}`;
+    return fetch(url)
+        .then((response) => { return response.json() })
+        .then((pokemonDetails) => { return pokemonDetails.name });
+}
+
+function convertPropertie(pokemonDetails) {
+    const namePropertie = { name: pokemonDetails.name };
+    return namePropertie;
+}
+
+// pokeApi.getPokemonId(1).then((fullPokemon) => {
+//     console.log(fullPokemon);
+// });
+
+console.log(getDetailsPokemon('egg-group', 1));

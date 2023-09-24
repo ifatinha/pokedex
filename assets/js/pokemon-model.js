@@ -5,6 +5,4 @@ class Pokemon {
     image;
     types = [];
     mainType;
-
-    constructor() {}
 }

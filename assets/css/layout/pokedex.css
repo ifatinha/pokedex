@@ -28,7 +28,7 @@
     color                      : #fff;
     display                    : flex;
     flex-direction             : column;
-    min-height                 : 120px;
+    min-height                 : 150px;
     padding                    : .8rem .5rem;
     -webkit-transition-duration: 0.4s;
     /* Safari */
@@ -38,6 +38,7 @@
 .pokemon:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     cursor    : pointer;
+    transform : translateY(-8px);
 }
 
 @media screen and (min-width: 600px) {
@@ -103,6 +104,6 @@
     text-align   : center;
 }
 
-.pokemon-type:nth-child(1) {
+.pokemon-types .pokemon-type:nth-child(1) {
     margin-bottom: 0.25rem;
 }

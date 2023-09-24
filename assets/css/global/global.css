@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Raleway:wght@400;500&family=Roboto:wght@100;300;400;500;700&display=swap');
 
 html,
 body {
@@ -19,6 +19,12 @@ body {
     width          : 100%;
 }
 
+/* @media screen and (min-width: 998px) {
+    .main:hover> :not(:hover) {
+        background-color: darkcyan;
+    }
+} */
+
 .container {
     background-color: #fff;
     border-radius   : 1rem;
@@ -26,6 +32,7 @@ body {
     margin          : 0 auto;
     max-width       : 1200px;
     padding         : 1.125rem 4%;
+    transition      : 0.5s ease-in-out;
     width           : 100%;
 }
 
@@ -40,8 +47,11 @@ body {
     width     : 100%;
 }
 
-.pagination button {
-    background-color           : #6600ff;
+button#loadMore {
+    background-color: #6600ff;
+}
+
+.btn-default {
     border                     : none;
     border-radius              : 0.25rem;
     color                      : #fff;
@@ -55,7 +65,7 @@ body {
     transition-duration        : 0.4s;
 }
 
-.pagination button:hover {
+.btn-default:hover {
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     opacity   : .9;
 }

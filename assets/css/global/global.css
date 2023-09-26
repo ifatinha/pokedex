@@ -42,6 +42,20 @@ body {
     margin-bottom: 0.75rem;
 }
 
+.pokemon-type,
+.pokemon-ability {
+    border-radius: .75rem;
+    color        : #fff;
+    font-size    : 0.8rem;
+    filter       : brightness(1.1);
+    padding      : .2rem .6rem;
+    text-align   : center;
+}
+
+.pokemon-types .pokemon-type:nth-child(1) {
+    margin-bottom: 0.25rem;
+}
+
 .pagination {
     text-align: center;
     width     : 100%;

@@ -9,7 +9,7 @@ function loadMorePokemon(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemonsList = []) => {
         pokemonsOl.innerHTML += pokemonsList.map((pokemon) => {
             return `
-                <li class="pokemon ${pokemon.mainType}">
+                <li class="pokemon ${pokemon.mainType}" id="${pokemon.order}" onclick="openModal('${pokemon.order}')">
                     <span class="pokemon-number">#000${pokemon.order}</span>    
                     <h2 class="pokemon-name">${pokemon.name}</h2>
         
@@ -36,10 +36,14 @@ loadButton.addEventListener('click', () => {
 
     if (qtdPokemons >= maxRegister) {
         const newLimit = maxRegister - offset;
-        loadMorePokemo(offset, newLimit);
+        loadMorePokemon(offset, newLimit);
         loadButton.parentElement.removeChild(loadButton);
         return
     } else {
-        loadMorePokemo(offset, limit);
+        loadMorePokemon(offset, limit);
     }
 });
+
+// pokeApi.getPokemonId(1).then((fullPokemon) => {
+//     console.log(fullPokemon);
+// });

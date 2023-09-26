@@ -27,8 +27,7 @@ function convertPokemonApiDetailToPokemon(pokeDetail) {
     return pokemon;
 }
 
-/*** page detail pokemo ***/
-let nameDetail;
+/*** modal detail pokemo ***/
 
 pokeApi.getPokemonId = (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -40,7 +39,6 @@ pokeApi.getPokemonId = (id) => {
 function createFullPokemonObject(pokemon) {
     const fullPokemon = new FullPokemon();
     fullPokemon.name = pokemon.name;
-    fullPokemon.id = pokemon.id;
     fullPokemon.height = pokemon.height;
     fullPokemon.weight = pokemon.weight;
     fullPokemon.experience = pokemon.base_experience;
@@ -48,6 +46,7 @@ function createFullPokemonObject(pokemon) {
     fullPokemon.types = pokemon.types.map((typeSlod) => { return typeSlod.type.name });
     fullPokemon.mainType = pokemon.types[0];
     fullPokemon.order = pokemon.order;
+    fullPokemon.img = pokemon.sprites.other.dream_world.front_default;
     // fullPokemon.group = getDetailsPokemon('egg-group', pokemon.id);
     return fullPokemon;
 }
@@ -56,16 +55,15 @@ pokeApi.pokemonDetail = (path, id) => {
     const url = `https://pokeapi.co/api/v2/${path}/${id}`;
     return fetch(url)
         .then((response) => { return response.json() })
-        .then((pokemonDetail) => { return pokemonDetail.name })
+        .then((pokemonDetail) => { return pokemonDetail })
 };
 
-const nameCategory = async () => {
-    const detailName = await pokeApi.pokemonDetail('egg-group', 1);
-    return detailName;
+const nameCategory = async (fullPokemon) => {
+    return await pokeApi.pokemonDetail('egg-group', 1);
 }
 
 // pokeApi.getPokemonId(1).then((fullPokemon) => {
 //     console.log(fullPokemon);
 // });
 
-console.log(nameCategory());
+// console.log(nameCategory());

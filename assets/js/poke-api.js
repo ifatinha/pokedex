@@ -27,14 +27,17 @@ function convertPokemonApiDetailToPokemon(pokeDetail) {
     return pokemon;
 }
 
+/*** page detail pokemo ***/
+let nameDetail;
+
 pokeApi.getPokemonId = (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     return fetch(url)
         .then((response) => { return response.json() })
-        .then((pokemon) => { return createPokemonObject(pokemon) })
+        .then((pokemon) => { return createFullPokemonObject(pokemon) })
 }
 
-function createPokemonObject(pokemon) {
+function createFullPokemonObject(pokemon) {
     const fullPokemon = new FullPokemon();
     fullPokemon.name = pokemon.name;
     fullPokemon.id = pokemon.id;
@@ -49,20 +52,20 @@ function createPokemonObject(pokemon) {
     return fullPokemon;
 }
 
-function getDetailsPokemon(path, id) {
+pokeApi.pokemonDetail = (path, id) => {
     const url = `https://pokeapi.co/api/v2/${path}/${id}`;
     return fetch(url)
         .then((response) => { return response.json() })
-        .then((pokemonDetails) => { return pokemonDetails.name });
-}
+        .then((pokemonDetail) => { return pokemonDetail.name })
+};
 
-function convertPropertie(pokemonDetails) {
-    const namePropertie = { name: pokemonDetails.name };
-    return namePropertie;
+const nameCategory = async () => {
+    const detailName = await pokeApi.pokemonDetail('egg-group', 1);
+    return detailName;
 }
 
 // pokeApi.getPokemonId(1).then((fullPokemon) => {
 //     console.log(fullPokemon);
 // });
 
-console.log(getDetailsPokemon('egg-group', 1));
+console.log(nameCategory());

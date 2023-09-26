@@ -5,7 +5,7 @@
     inset           : 0;
     min-height      : 100%;
     overflow        : auto;
-    padding         : 60px 2%;
+    padding         : 20px 2%;
     position        : fixed;
     width           : 100%;
     z-index         : 99999;
@@ -31,7 +31,7 @@
     -webkit-animation-name    : animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name            : animatetop;
-    animation-duration        : 0.4s
+    animation-duration        : 0.4s;
 }
 
 @media screen and (min-width: 998px) {
@@ -47,15 +47,16 @@
 }
 
 .m-pokemon-imagem {
-    align-items    : center;
-    align-self     : center;
-    display        : flex;
-    flex-direction : column;
-    justify-self   : center;
-    justify-content: center;
-    min-height     : 250px;
-    padding        : 2rem;
-    position       : relative;
+    align-items     : center;
+    align-self      : center;
+    display         : flex;
+    flex-direction  : column;
+    justify-self    : center;
+    justify-content : center;
+    min-height      : 250px;
+    padding         : 2rem;
+    position        : relative;
+    width           : 100%;
 }
 
 .m-pokemon-imagem img {
@@ -137,6 +138,10 @@
     font-size     : 2.5rem;
     font-weight   : 700;
     text-transform: uppercase;
+}
+
+.m-pokemon-type {
+    text-transform: capitalize;
 }
 
 .m-pokemon-detail {

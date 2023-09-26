@@ -59,11 +59,11 @@ pokeApi.pokemonDetail = (path, id) => {
 };
 
 const nameCategory = async (fullPokemon) => {
-    return await pokeApi.pokemonDetail('egg-group', 1);
+    return await pokeApi.pokemonDetail('pokemon-species', 2);
 }
 
 // pokeApi.getPokemonId(1).then((fullPokemon) => {
 //     console.log(fullPokemon);
 // });
 
-// console.log(nameCategory());
+console.log(nameCategory());

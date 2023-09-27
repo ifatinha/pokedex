@@ -55,7 +55,6 @@ function openModal(pokemonId) {
                 return `<li class="pokemon-ability ${fullPokemon.mainType.type.name}"><span>#${ability}</span></li>`
             }).join("")}
                                 </ul>
-                                <span class="m-span-info">Ability</span>
                                 <div class="btn-save">
                                     <button class="btn-default ${fullPokemon.mainType.type.name}">Save</button>
                                 </div>

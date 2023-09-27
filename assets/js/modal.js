@@ -58,7 +58,7 @@ function openModal(pokemonId) {
                 </section>
             `;
         }).finally();
-    }).finally(console.log("Finish"));
+    }).finally();
 }
 
 function closeModal() {

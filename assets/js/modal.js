@@ -1,12 +1,12 @@
 const modalPokemon = document.querySelector("#modalPokemon");
 
 function openModal(pokemonId) {
-    modalPokemon.style.display = 'block';
 
-    pokeApi.getPokemonId(pokemonId).then((fullPokemon) => {
-        pokeApi.pokemonSpecie(pokemonId).then((pokemonSpecie) => {
-            fullPokemon.specie = pokemonSpecie;
-            modalPokemon.innerHTML = `
+    setTimeout(() => {
+        pokeApi.getPokemonId(pokemonId).then((fullPokemon) => {
+            pokeApi.pokemonSpecie(pokemonId).then((pokemonSpecie) => {
+                fullPokemon.specie = pokemonSpecie;
+                modalPokemon.innerHTML = `
                 <section class="modal-pokemon">
                     <div class="m-pokemon-imagem">
                             <a href="#" aria-label="Button Close" class="btn-close" id="btn-close-mobile" onclick="closeModal()">
@@ -52,8 +52,8 @@ function openModal(pokemonId) {
                                 <span class="m-span-info">Ability</span>
                                 <ul class="m-pokemon-ability">
                                     ${fullPokemon.abilities.map((ability) => {
-                return `<li class="pokemon-ability ${fullPokemon.mainType.type.name}"><span>#${ability}</span></li>`
-            }).join("")}
+                    return `<li class="pokemon-ability ${fullPokemon.mainType.type.name}"><span>#${ability}</span></li>`
+                }).join("")}
                                 </ul>
                                 <div class="btn-save">
                                     <button class="btn-default ${fullPokemon.mainType.type.name}">Save</button>
@@ -62,8 +62,10 @@ function openModal(pokemonId) {
                     </div>
                 </section>
             `;
+            }).finally();
         }).finally();
-    }).finally();
+        modalPokemon.style.display = 'block';
+    }, 2000);
 }
 
 function closeModal() {

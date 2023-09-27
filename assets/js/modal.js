@@ -1,7 +1,6 @@
 const modalPokemon = document.querySelector("#modalPokemon");
 
 function openModal(pokemonId) {
-
     setTimeout(() => {
         pokeApi.getPokemonId(pokemonId).then((fullPokemon) => {
             pokeApi.pokemonSpecie(pokemonId).then((pokemonSpecie) => {
@@ -65,6 +64,7 @@ function openModal(pokemonId) {
             }).finally();
         }).finally();
         modalPokemon.style.display = 'block';
+        
     }, 1000);
 }
 

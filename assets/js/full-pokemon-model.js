@@ -8,5 +8,5 @@ class FullPokemon{
     mainType;
     order;
     img;
-    description;
+    specie = new Specie();
 }

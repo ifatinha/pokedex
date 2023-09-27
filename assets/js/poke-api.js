@@ -27,7 +27,25 @@ function convertPokemonApiDetailToPokemon(pokeDetail) {
     return pokemon;
 }
 
-/*** modal detail pokemo ***/
+/*** modal detail pokemon ***/
+pokeApi.pokemonSpecie = (id) => {
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${id}`;
+    return fetch(url)
+        .then((response) => { return response.json() })
+        .then((pokemonSpecie) => { return getSpeciePokemon(pokemonSpecie) })
+};
+
+function getSpeciePokemon(specie) {
+    const pokemonSpecie = new Specie();
+    pokemonSpecie.id = specie.id;
+    pokemonSpecie.group = specie.egg_groups.map((group) => { return group.name });
+    pokemonSpecie.description = specie.flavor_text_entries.filter((desc) => { return desc.language.name === 'en' })
+    pokemonSpecie.generation = specie.generation.name;
+    pokemonSpecie.habitat = specie.habitat.name;
+    pokemonSpecie.shape = specie.shape.name;
+
+    return pokemonSpecie;
+}
 
 pokeApi.getPokemonId = (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
@@ -47,23 +65,13 @@ function createFullPokemonObject(pokemon) {
     fullPokemon.mainType = pokemon.types[0];
     fullPokemon.order = pokemon.order;
     fullPokemon.img = pokemon.sprites.other.dream_world.front_default;
-    // fullPokemon.group = getDetailsPokemon('egg-group', pokemon.id);
+
     return fullPokemon;
 }
 
-pokeApi.pokemonDetail = (path, id) => {
-    const url = `https://pokeapi.co/api/v2/${path}/${id}`;
-    return fetch(url)
-        .then((response) => { return response.json() })
-        .then((pokemonDetail) => { return pokemonDetail })
-};
-
-const nameCategory = async (fullPokemon) => {
-    return await pokeApi.pokemonDetail('pokemon-species', 2);
-}
-
 // pokeApi.getPokemonId(1).then((fullPokemon) => {
-//     console.log(fullPokemon);
-// });
-
-console.log(nameCategory());
+//     pokeApi.pokemonSpecie(1).then((pokemonSpecie) => {
+//         fullPokemon.specie = pokemonSpecie;
+//         console.log(pokemonSpecie);
+//     })
+// })

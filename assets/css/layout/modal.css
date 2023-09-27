@@ -47,16 +47,16 @@
 }
 
 .m-pokemon-imagem {
-    align-items     : center;
-    align-self      : center;
-    display         : flex;
-    flex-direction  : column;
-    justify-self    : center;
-    justify-content : center;
-    min-height      : 250px;
-    padding         : 2rem;
-    position        : relative;
-    width           : 100%;
+    align-items    : center;
+    align-self     : center;
+    display        : flex;
+    flex-direction : column;
+    justify-self   : center;
+    justify-content: center;
+    min-height     : 250px;
+    padding        : 2rem;
+    position       : relative;
+    width          : 100%;
 }
 
 .m-pokemon-imagem img {
@@ -183,9 +183,14 @@
     margin-bottom: 2rem;
 }
 
+.m-pokemon-generation {
+    font-size    : 1.1rem;
+    font-weight  : bolder;
+    margin-bottom: 1rem;
+}
+
 .m-pokemon-desc {
     font-family  : 'Raleway', sans-serif;
-    font-size    : 1.1rem;
     margin-bottom: 3rem;
 }
 

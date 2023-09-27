@@ -18,7 +18,7 @@ function openModal(pokemonId) {
                             <div class="m-pokemon-top">
                                 <div class="m-pokemon-number">
                                     <img src="assets/images/pokebola.png" alt="Pokebola">
-                                    <span>000${fullPokemon.order}</span>
+                                    <span>000${fullPokemon.id}</span>
                                 </div>
                                 <a href="#" aria-label="Button Close" class="btn-close" id="btn-close-desktop" onclick="closeModal()">
                                     <i class="fa-solid fa-xmark"></i></a>

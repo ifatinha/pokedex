@@ -63,7 +63,7 @@ function createFullPokemonObject(pokemon) {
     fullPokemon.abilities = pokemon.abilities.map((abilityName) => { return abilityName.ability.name });
     fullPokemon.types = pokemon.types.map((typeSlod) => { return typeSlod.type.name });
     fullPokemon.mainType = pokemon.types[0];
-    fullPokemon.order = pokemon.order;
+    fullPokemon.id = pokemon.id;
     fullPokemon.img = pokemon.sprites.other.dream_world.front_default;
 
     return fullPokemon;

@@ -6,7 +6,7 @@ class FullPokemon{
     types = [];
     weight;
     mainType;
-    order;
+    id;
     img;
     specie = new Specie();
 }

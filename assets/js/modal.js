@@ -33,11 +33,15 @@ function openModal(pokemonId) {
                             </li>
                             <li>
                                 <p>Height</p>
-                                <span>${fullPokemon.height}</span>
+                                <span>${fullPokemon.height}m</span>
                             </li>
                             <li>
                                 <p>Weight</p>
-                                <span>${fullPokemon.weight}</span>
+                                <span>${fullPokemon.weight}.0kg</span>
+                            </li>
+                            <li>
+                                <p>Habitat</p>
+                                <span>${fullPokemon.specie.habitat}</span>
                             </li>
                         </ul>
                         <div class="m-desc-container">
@@ -45,11 +49,13 @@ function openModal(pokemonId) {
                                 <p class="m-pokemon-desc">
                                     ${fullPokemon.specie.description[Math.floor((Math.random() * 28) + 0)].flavor_text}
                                 </p>
+                                <span class="m-span-info">Ability</span>
                                 <ul class="m-pokemon-ability">
                                     ${fullPokemon.abilities.map((ability) => {
-                                    return `<li class="pokemon-ability ${fullPokemon.mainType.type.name}"><span>#${ability}</span></li>`
-                                }).join("")}
+                return `<li class="pokemon-ability ${fullPokemon.mainType.type.name}"><span>#${ability}</span></li>`
+            }).join("")}
                                 </ul>
+                                <span class="m-span-info">Ability</span>
                                 <div class="btn-save">
                                     <button class="btn-default ${fullPokemon.mainType.type.name}">Save</button>
                                 </div>
